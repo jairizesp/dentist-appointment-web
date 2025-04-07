@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { Appointment } from 'src/interface/appointment/appointment.interface';
 import { AppointmentService } from 'src/services/appointment/appointment.service';
 
@@ -29,5 +29,10 @@ export class AppointmentController {
   @Get('/by-patient/history/:id')
   async getPreviousAppointmentByPatient(@Param('id') id: number) {
     return this.appointmentService.getPreviousAppointmentByPatient(Number(id));
+  }
+
+  @Put('/cancel-appointment/:id')
+  async cancelAppointment(@Param('id') id: string) {
+    return this.appointmentService.cancelAppointment(Number(id));
   }
 }

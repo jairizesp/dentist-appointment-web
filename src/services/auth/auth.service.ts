@@ -5,6 +5,7 @@ import {
   Injectable,
   InternalServerErrorException,
   NotAcceptableException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { Pool } from 'pg';
 import {
@@ -38,6 +39,10 @@ export class AuthService {
       credentials.email,
     ]);
     const user = res.rows[0];
+
+    if (!user) {
+      throw new NotAcceptableException('Invalid credentials');
+    }
 
     if (user && (await bcrypt.compare(credentials.password, user.password))) {
       const { password, ...result } = user;

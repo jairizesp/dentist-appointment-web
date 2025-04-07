@@ -13,6 +13,7 @@ export const DatabaseProvider = {
 
     // Optional: test connection
     await pool.query('SELECT 1');
+    await pool.query("SET TIMEZONE TO 'Asia/Manila'");
     console.log('[DB] PostgreSQL pool initialized');
     return pool;
   },

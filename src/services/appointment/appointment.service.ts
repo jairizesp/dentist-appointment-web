@@ -1,4 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Pool } from 'pg';
 import { Appointment } from 'src/interface/appointment/appointment.interface';
 
@@ -48,20 +52,27 @@ export class AppointmentService {
       LEFT JOIN 
         dentist d ON d.id = a.dentist_id
       WHERE 
-        a.user_id = $1 
-        AND a.appointment_date >= CURRENT_DATE
-        AND (
+        a.user_id = $1
+        AND  (a.appointment_date > CURRENT_DATE
+      OR (a.appointment_date = CURRENT_DATE AND (
           CASE 
             WHEN a.from < 8 THEN a.from + 12
             ELSE a.from
           END
-        ) < EXTRACT(HOUR FROM CURRENT_TIMESTAMP)
-        AND a.is_cancelled = FALSE;
-      `,
+        ) > EXTRACT(HOUR FROM CURRENT_TIMESTAMP)))
+        AND a.is_cancelled = FALSE
+        ORDER BY a.appointment_date ASC;`,
       [user_id],
     );
 
-    return result.rows;
+    const adjustedResults = result.rows.map((row) => {
+      row.appointment_date = new Date(
+        row.appointment_date,
+      ).toLocaleDateString(); // Adjust as needed
+      return row;
+    });
+
+    return adjustedResults;
   }
 
   async getPreviousAppointmentByPatient(user_id: number) {
@@ -81,5 +92,18 @@ export class AppointmentService {
     );
 
     return result.rows;
+  }
+
+  async cancelAppointment(id: number) {
+    try {
+      const result = await this.pool.query(
+        'UPDATE appointments SET is_cancelled = TRUE WHERE id = $1 RETURNING *',
+        [id],
+      );
+
+      return result.rows[0];
+    } catch (error) {
+      throw new InternalServerErrorException('Something went wrong');
+    }
   }
 }
