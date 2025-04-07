@@ -76,7 +76,11 @@ let AppointmentService = class AppointmentService {
             ELSE a.from
           END
         ) < EXTRACT(HOUR FROM CURRENT_TIMESTAMP)))`, [user_id]);
-        return result.rows;
+        const adjustedResults = result.rows.map((row) => {
+            row.appointment_date = new Date(row.appointment_date).toLocaleDateString();
+            return row;
+        });
+        return adjustedResults;
     }
     async cancelAppointment(id) {
         try {

@@ -95,7 +95,14 @@ export class AppointmentService {
       [user_id],
     );
 
-    return result.rows;
+    const adjustedResults = result.rows.map((row) => {
+      row.appointment_date = new Date(
+        row.appointment_date,
+      ).toLocaleDateString(); // Adjust as needed
+      return row;
+    });
+
+    return adjustedResults;
   }
 
   async cancelAppointment(id: number) {
