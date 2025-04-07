@@ -85,7 +85,7 @@ Deployment: Configured for deployment on Vercel, as indicated by the vercel.json
 ##Installation and Setup
 To set up the project locally:
 Clone the Repository:
- ```js
+ ```bash
   git clone https://github.com/jairizesp/dentist-appointment-web.git
 ```
 
