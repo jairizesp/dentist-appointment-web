@@ -4,7 +4,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Pool } from 'pg';
-import { Appointment } from 'src/interface/appointment/appointment.interface';
+import { Appointment } from '../../interface/appointment/appointment.interface';
 
 @Injectable()
 export class AppointmentService {

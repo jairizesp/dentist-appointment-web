@@ -1,6 +1,6 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Pool } from 'pg';
-import { DentistInformation } from 'src/interface/dentist/dentist.interface';
+import { DentistInformation } from '../../interface/dentist/dentist.interface';
 
 @Injectable()
 export class DentistService {

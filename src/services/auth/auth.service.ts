@@ -11,10 +11,10 @@ import { Pool } from 'pg';
 import {
   UserCredentials,
   UserInformation,
-} from 'src/interface/auth/auth.interface';
+} from '../../interface/auth/auth.interface';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
-import { ApiResult } from 'src/interface/api-result.interface';
+import { ApiResult } from '../../interface/api-result.interface';
 
 @Injectable()
 export class AuthService {

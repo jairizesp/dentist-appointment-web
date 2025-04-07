@@ -6,12 +6,12 @@ import {
   Post,
   UnauthorizedException,
 } from '@nestjs/common';
-import { ApiResult } from 'src/interface/api-result.interface';
+import { ApiResult } from '../../interface/api-result.interface';
 import {
   UserCredentials,
   UserInformation,
-} from 'src/interface/auth/auth.interface';
-import { AuthService } from 'src/services/auth/auth.service';
+} from '../../interface/auth/auth.interface';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Controller('api/auth')
 export class AuthController {

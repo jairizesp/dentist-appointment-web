@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { Appointment } from 'src/interface/appointment/appointment.interface';
-import { AppointmentService } from 'src/services/appointment/appointment.service';
+import { Appointment } from '../../interface/appointment/appointment.interface';
+import { AppointmentService } from '../../services/appointment/appointment.service';
 
 @Controller('api/appointment')
 export class AppointmentController {
