@@ -70,7 +70,7 @@ Testing: Configured testing environment (specific framework not specified)​
 Deployment: Configured for deployment on Vercel, as indicated by the vercel.json file.​
 
 ##Project Structure
-```js
+```bash
     src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
     test/: Holds test files for the application.​
     .gitignore: Specifies files and directories to be ignored by Git.​
@@ -86,22 +86,22 @@ Deployment: Configured for deployment on Vercel, as indicated by the vercel.json
 To set up the project locally:
 Clone the Repository:
  ```bash
-  git clone https://github.com/jairizesp/dentist-appointment-web.git
+  $ git clone https://github.com/jairizesp/dentist-appointment-web.git
 ```
 
 ##Navigate to the Project Directory:
-```js
-  cd dentist-appointment-web
+```bash
+  $ cd dentist-appointment-web
 ```
 
 ##Install Dependencies:
-```js
-  npm install
+```bash
+  $ npm install
 ```
 
 ##Start the Development Server:
-```js
-  npm run start:dev
+```bash
+  $ npm run start:dev
 ```
 The application will be running at http://localhost:3000 by default.
 
@@ -109,8 +109,8 @@ The application will be running at http://localhost:3000 by default.
 The presence of the vercel.json file suggests that the project is configured for deployment on Vercel. To deploy:​
 
 Install Vercel CLI: 
-```js
-  npm install -g vercel
+```bash
+ $ npm install -g vercel
 ```
 
 #Deploy the Application: 
@@ -123,16 +123,16 @@ Contributions to the project are welcome. To contribute:​
 Fork the Repository.
 
 Create a New Branch:
-```js
-  git checkout -b feature-name
+```bash
+  $ git checkout -b feature-name
 ```
 
 Make Your Changes.
 
 Commit and Push: 
-```js
-  git commit -m "Description of changes"
-  git push origin feature-name
+```bash
+  $ git commit -m "Description of changes"
+  $ git push origin feature-name
 ```
 Create a Pull Request.
 
