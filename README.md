@@ -70,7 +70,7 @@ Testing: Configured testing environment (specific framework not specified)​
 Deployment: Configured for deployment on Vercel, as indicated by the vercel.json file.​
 
 ## Project Structure
-  ## src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
+  # src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
   
   ## test/: Holds test files for the application.​
   
