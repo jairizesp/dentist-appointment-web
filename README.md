@@ -70,23 +70,23 @@ Testing: Configured testing environment (specific framework not specified)​
 Deployment: Configured for deployment on Vercel, as indicated by the vercel.json file.​
 
 ## Project Structure
-  ### src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
+  #### src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
   
-  ## test/: Holds test files for the application.​
+  #### test/: Holds test files for the application.​
   
-  ## .gitignore: Specifies files and directories to be ignored by Git.​
+  #### .gitignore: Specifies files and directories to be ignored by Git.​
   
-  ## .prettierrc: Configuration file for Prettier code formatter.​
+  #### .prettierrc: Configuration file for Prettier code formatter.​
   
-  ## eslint.config.mjs: Configuration file for ESLint.​
+  #### eslint.config.mjs: Configuration file for ESLint.​
   
-  ## nest-cli.json: NestJS CLI configuration file.​
+  #### nest-cli.json: NestJS CLI configuration file.​
   
-  ## package.json: Lists project dependencies and scripts.​
+  #### package.json: Lists project dependencies and scripts.​
   
-  ## tsconfig.json & tsconfig.build.json: TypeScript configuration files.​
+  #### tsconfig.json & tsconfig.build.json: TypeScript configuration files.​
   
-  ## vercel.json: Configuration file for deployment on Vercel.​
+  #### vercel.json: Configuration file for deployment on Vercel.​
 
 ## Installation and Setup
 To set up the project locally:
