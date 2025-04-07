@@ -1,5 +1,5 @@
 import { Pool } from 'pg';
-import { Appointment } from 'src/interface/appointment/appointment.interface';
+import { Appointment, ReschedAppointment } from '../../interface/appointment/appointment.interface';
 export declare class AppointmentService {
     private readonly pool;
     constructor(pool: Pool);
@@ -11,4 +11,5 @@ export declare class AppointmentService {
     getAppointmentByPatient(user_id: number): Promise<any>;
     getPreviousAppointmentByPatient(user_id: number): Promise<any>;
     cancelAppointment(id: number): Promise<any>;
+    rescheduleAppointment(payload: ReschedAppointment): Promise<any>;
 }

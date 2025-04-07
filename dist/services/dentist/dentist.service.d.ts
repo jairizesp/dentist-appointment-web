@@ -1,5 +1,5 @@
 import { Pool } from 'pg';
-import { DentistInformation } from 'src/interface/dentist/dentist.interface';
+import { DentistInformation } from '../../interface/dentist/dentist.interface';
 export declare class DentistService {
     private readonly pool;
     constructor(pool: Pool);

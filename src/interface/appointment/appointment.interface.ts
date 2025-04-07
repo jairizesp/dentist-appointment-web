@@ -6,3 +6,10 @@ export interface Appointment {
   from: number;
   to: number;
 }
+
+export interface ReschedAppointment {
+  id: number;
+  appointment_date: string;
+  from: number;
+  to: number;
+}

@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
-import { UserCredentials, UserInformation } from 'src/interface/auth/auth.interface';
+import { UserCredentials, UserInformation } from '../../interface/auth/auth.interface';
 import * as jwt from 'jsonwebtoken';
-import { ApiResult } from 'src/interface/api-result.interface';
+import { ApiResult } from '../../interface/api-result.interface';
 export declare class AuthService {
     private readonly pool;
     constructor(pool: Pool);

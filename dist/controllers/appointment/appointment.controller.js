@@ -38,6 +38,9 @@ let AppointmentController = class AppointmentController {
     async cancelAppointment(id) {
         return this.appointmentService.cancelAppointment(Number(id));
     }
+    async rescheduleAppointment(payload) {
+        return this.appointmentService.rescheduleAppointment(payload);
+    }
 };
 exports.AppointmentController = AppointmentController;
 __decorate([
@@ -75,6 +78,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AppointmentController.prototype, "cancelAppointment", null);
+__decorate([
+    (0, common_1.Put)('/resched-appointment'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppointmentController.prototype, "rescheduleAppointment", null);
 exports.AppointmentController = AppointmentController = __decorate([
     (0, common_1.Controller)('api/appointment'),
     __metadata("design:paramtypes", [appointment_service_1.AppointmentService])

@@ -1,5 +1,8 @@
 import { Body, Controller, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { Appointment } from '../../interface/appointment/appointment.interface';
+import {
+  Appointment,
+  ReschedAppointment,
+} from '../../interface/appointment/appointment.interface';
 import { AppointmentService } from '../../services/appointment/appointment.service';
 
 @Controller('api/appointment')
@@ -34,5 +37,10 @@ export class AppointmentController {
   @Put('/cancel-appointment/:id')
   async cancelAppointment(@Param('id') id: string) {
     return this.appointmentService.cancelAppointment(Number(id));
+  }
+
+  @Put('/resched-appointment')
+  async rescheduleAppointment(@Body() payload: ReschedAppointment) {
+    return this.appointmentService.rescheduleAppointment(payload);
   }
 }

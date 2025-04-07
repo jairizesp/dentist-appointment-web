@@ -1,10 +1,14 @@
 import {
+  BadRequestException,
   Inject,
   Injectable,
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Pool } from 'pg';
-import { Appointment } from '../../interface/appointment/appointment.interface';
+import {
+  Appointment,
+  ReschedAppointment,
+} from '../../interface/appointment/appointment.interface';
 
 @Injectable()
 export class AppointmentService {
@@ -104,6 +108,31 @@ export class AppointmentService {
       return result.rows[0];
     } catch (error) {
       throw new InternalServerErrorException('Something went wrong');
+    }
+  }
+
+  async rescheduleAppointment(payload: ReschedAppointment) {
+    try {
+      console.log(payload);
+      const response = await this.pool.query(
+        `UPDATE appointments 
+       SET appointment_date = $1, "from" = $2, "to" = $3
+       WHERE id = $4
+       RETURNING *
+      `,
+        [payload.appointment_date, payload.from, payload.to, payload.id],
+      );
+
+      console.log(response.rows);
+
+      if (!response.rows.length) {
+        throw new BadRequestException('Sent payload could be invalid');
+      }
+
+      return response.rows[0];
+    } catch (error) {
+      console.log(error);
+      throw new InternalServerErrorException('Something went wrong.');
     }
   }
 }

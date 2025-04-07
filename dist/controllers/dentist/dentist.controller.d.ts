@@ -1,4 +1,4 @@
-import { DentistService } from 'src/services/dentist/dentist.service';
+import { DentistService } from '../../services/dentist/dentist.service';
 export declare class DentistController {
     private readonly dentistService;
     constructor(dentistService: DentistService);

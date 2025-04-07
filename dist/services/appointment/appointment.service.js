@@ -87,6 +87,25 @@ let AppointmentService = class AppointmentService {
             throw new common_1.InternalServerErrorException('Something went wrong');
         }
     }
+    async rescheduleAppointment(payload) {
+        try {
+            console.log(payload);
+            const response = await this.pool.query(`UPDATE appointments 
+       SET appointment_date = $1, "from" = $2, "to" = $3
+       WHERE id = $4
+       RETURNING *
+      `, [payload.appointment_date, payload.from, payload.to, payload.id]);
+            console.log(response.rows);
+            if (!response.rows.length) {
+                throw new common_1.BadRequestException('Sent payload could be invalid');
+            }
+            return response.rows[0];
+        }
+        catch (error) {
+            console.log(error);
+            throw new common_1.InternalServerErrorException('Something went wrong.');
+        }
+    }
 };
 exports.AppointmentService = AppointmentService;
 exports.AppointmentService = AppointmentService = __decorate([

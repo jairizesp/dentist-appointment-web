@@ -1,5 +1,5 @@
-import { Appointment } from 'src/interface/appointment/appointment.interface';
-import { AppointmentService } from 'src/services/appointment/appointment.service';
+import { Appointment, ReschedAppointment } from '../../interface/appointment/appointment.interface';
+import { AppointmentService } from '../../services/appointment/appointment.service';
 export declare class AppointmentController {
     private readonly appointmentService;
     constructor(appointmentService: AppointmentService);
@@ -11,4 +11,5 @@ export declare class AppointmentController {
     getAppointmentByPatient(id: number): Promise<any>;
     getPreviousAppointmentByPatient(id: number): Promise<any>;
     cancelAppointment(id: string): Promise<any>;
+    rescheduleAppointment(payload: ReschedAppointment): Promise<any>;
 }
