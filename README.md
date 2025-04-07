@@ -69,7 +69,7 @@ Backend Framework: NestJS (Node.js with TypeScript)​
 Testing: Configured testing environment (specific framework not specified)​
 Deployment: Configured for deployment on Vercel, as indicated by the vercel.json file.​
 
-##Project Structure
+## Project Structure
 ```bash
     src/: Contains the main source code for the NestJS application, including modules, controllers, and services.​
     test/: Holds test files for the application.​
@@ -82,30 +82,30 @@ Deployment: Configured for deployment on Vercel, as indicated by the vercel.json
     vercel.json: Configuration file for deployment on Vercel.​
 ```
 
-##Installation and Setup
+## Installation and Setup
 To set up the project locally:
 Clone the Repository:
  ```bash
   $ git clone https://github.com/jairizesp/dentist-appointment-web.git
 ```
 
-##Navigate to the Project Directory:
+## Navigate to the Project Directory:
 ```bash
   $ cd dentist-appointment-web
 ```
 
-##Install Dependencies:
+## Install Dependencies:
 ```bash
   $ npm install
 ```
 
-##Start the Development Server:
+## Start the Development Server:
 ```bash
   $ npm run start:dev
 ```
 The application will be running at http://localhost:3000 by default.
 
-##Deployment
+## Deployment
 The presence of the vercel.json file suggests that the project is configured for deployment on Vercel. To deploy:​
 
 Install Vercel CLI: 
@@ -113,11 +113,11 @@ Install Vercel CLI:
  $ npm install -g vercel
 ```
 
-#Deploy the Application: 
+# Deploy the Application: 
 vercel
 Follow the prompts to complete the deployment process.
 
-##Contributing
+## Contributing
 Contributions to the project are welcome. To contribute:​
 
 Fork the Repository.
