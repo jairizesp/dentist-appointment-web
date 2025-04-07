@@ -7,8 +7,7 @@ async function bootstrap() {
     dotenv.config();
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: process.env.CLIENT_URL ??
-            'https://dentist-appointment-app-rdcy.vercel.app',
+        origin: 'https://dentist-appointment-app-rdcy.vercel.app',
         credentials: true,
     });
     await app.listen(3000);

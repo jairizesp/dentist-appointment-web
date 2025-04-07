@@ -7,9 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin:
-      process.env.CLIENT_URL! ??
-      'https://dentist-appointment-app-rdcy.vercel.app',
+    origin: 'https://dentist-appointment-app-rdcy.vercel.app',
     credentials: true,
   });
 
