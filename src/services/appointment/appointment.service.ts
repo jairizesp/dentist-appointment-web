@@ -19,7 +19,7 @@ export class AppointmentService {
     appointment_date: string;
   }): Promise<Appointment[]> {
     const result = await this.pool.query(
-      'SELECT * FROM appointments WHERE dentist_id = $1 AND appointment_date = $2',
+      'SELECT * FROM appointments WHERE dentist_id = $1 AND appointment_date = $2 AND is_cancelled = FALSE',
       [query.dentist_id, query.appointment_date],
     );
 
