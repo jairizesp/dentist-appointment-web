@@ -22,6 +22,7 @@ export class AppointmentService {
       'SELECT * FROM appointments WHERE dentist_id = $1 AND appointment_date = $2 AND is_cancelled = FALSE',
       [query.dentist_id, query.appointment_date],
     );
+    console.log(result);
 
     return result.rows;
   }
